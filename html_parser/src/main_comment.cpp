@@ -5,9 +5,12 @@
 using namespace std;
 
 int main() {
+    // The HTML string to check for valid tags
     string html_str = "<html><head><title>Website</title></head><body><h1>Big Website</h1><p>big website contest</p></body></html>";
+    // Stack to keep track of open HTML tags
     stack<string> st;
-
+    
+    // Variables to hold the indices of the opening and closing tags
     int opening_index = 0;
     int closing_index = 0;
     for (int i = 0; i < html_str.length(); i++) {
@@ -36,4 +39,3 @@ int main() {
     cout << "valid html" << endl;
     return 0;
 }
-
