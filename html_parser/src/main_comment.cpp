@@ -5,6 +5,10 @@
 using namespace std;
 
 int main() {
+    // This program checks the validity of HTML tags in the given string
+    // It uses a stack to make sure that each opening tag has a corresponding closing tag
+    // If any tag does not have a matching pair, it reportans an error. Otherwise it confirms the HTML as valid.
+
     // The HTML string to check for valid tags
     string html_str = "<html><head><title>Website</title></head><body><h1>Big Website</h1><p>big website contest</p></body></html>";
     // Stack to keep track of open HTML tags
