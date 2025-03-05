@@ -42,13 +42,14 @@ int main() {
                 // Pop the matching opening tag from the stack
                 st.pop();
                 continue;
-            }
-
+           
+             }
+            // If its an opening tag, slice tag name and push it to stack
             slice = html_str.substr(opening_index + 1, slice_len - 1);
             st.push(slice);
         }
     }
-
+    // If all tags are correctly matched/closed, print vald html
     cout << "valid html" << endl;
     return 0;
 }
