@@ -25,3 +25,24 @@ void enqueue(const T& val) {
     last = (last + 1) % MAX_ITEMS;
 }
 ```
+
+---
+
+# Priority Queue
+- Implements a **priority based ordering** using a LinkedList
+- Higher values are dequeues first
+- Methods:
+    - `enqueue(T cargo)`: Inserts in order
+    - `dequeue()`: Removes highest priority element
+    - `top()`: Returns highest priority element
+
+```cpp
+void enqueue(T cargo) {
+    int n = 1;
+    while (n <= LinkedList<T>::length() && LinkedList<T>::get_item_at(n) > cargo)
+        n++;
+    LinkedList<T>::insert_item_at(cargo, n - 1);
+}
+```
+
+---
