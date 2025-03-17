@@ -24,3 +24,4 @@ void enqueue(const T& val) {
     items[last] = val;
     last = (last + 1) % MAX_ITEMS;
 }
+'''
