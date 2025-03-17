@@ -16,3 +16,11 @@
 - Fixed size ('MAX_ITEMS=10')
 - Circular queue approach
 - Handles overflow and underflow errors
+
+'''cpp
+void enqueue(const T& val) {
+    if ((last+1) % MAX_ITEMS==first)
+        throw overflow_error("Error: No more space in queue");
+    items[last] = val;
+    last = (last + 1) % MAX_ITEMS;
+}
