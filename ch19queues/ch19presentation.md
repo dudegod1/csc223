@@ -44,5 +44,3 @@ void enqueue(T cargo) {
     LinkedList<T>::insert_item_at(cargo, n - 1);
 }
 ```
-
----
