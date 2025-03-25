@@ -73,3 +73,38 @@ RGTpair remove() {
 
 ---
 
+### `empty()`
+
+```cpp
+bool empty() {
+    return redQ.empty() || greenQ.empty();
+}
+```
+
+---
+
+## Why This Works
+
+This method:
+
+- Keeps insertion O(1)
+- Keeps removal O(1)
+- Avoids unnecessary traversal or reordering
+- Keeps color order independent but respects arrival time within each color
+
+---
+
+## Edge Cases
+
+| Situation                  | Behavior                         |
+|---------------------------|----------------------------------|
+| Only RED or GREEN items   | `empty()` returns true           |
+| No items at all           | `empty()` returns true           |
+| One RED and one GREEN     | `remove()` returns the pair      |
+
+---
+
+## Final Thoughts
+
+This queue isn’t just about order. It’s about coordination between RED and GREEN.  
+Separating them makes it easy to know when a match is ready—no need for color-matching logic inside one big queue.
