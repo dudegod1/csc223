@@ -52,3 +52,23 @@ end
     * Elements less than or equal to the pivot
     * Elements greater than the pivot
 3. Recurisvely apply quick sort to both halves!
+
+### The Code:
+
+```ruby
+def quick_sort(array)
+  return array if array.length <= 1
+  pivot = array.delete_at(rand(array.length))
+  left, right = array.partition do |x|
+    x<=pivot
+  end
+
+  quick_sort(left) + [pivot] + quick_sort(right)
+end
+```
+
+### Time Complexity
+
+* Best Case: O(n log n)
+* Worst Case: O(nˆ2)
+* Space Complexity: O(log n)
